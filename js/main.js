@@ -1,13 +1,19 @@
-// 스크롤 시 헤더 스타일 변경
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
+// 스크롤 시 네비게이션 스타일 변경
+const nav = document.querySelector('.main-nav');
+window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+        nav.classList.add('scrolled');
     } else {
-        header.style.backgroundColor = '#fff';
-        header.style.boxShadow = 'none';
+        nav.classList.remove('scrolled');
     }
+});
+
+// 모바일 메뉴 토글
+const mobileMenuBtn = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
 
 // 부드러운 스크롤
@@ -20,36 +26,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            // 모바일 메뉴가 열려있으면 닫기
+            navLinks.classList.remove('active');
         }
     });
 });
 
-// 갤러리 이미지 로딩 애니메이션
-const galleryImages = document.querySelectorAll('.gallery-grid img');
-galleryImages.forEach(img => {
+// 이미지 로딩 애니메이션
+const images = document.querySelectorAll('img');
+images.forEach(img => {
     img.addEventListener('load', function() {
         this.style.opacity = '1';
-        this.style.transform = 'scale(1)';
     });
 });
 
-// 모바일 메뉴 토글
-const createMobileMenu = () => {
-    const nav = document.querySelector('nav');
-    const menuButton = document.createElement('button');
-    menuButton.className = 'mobile-menu-button';
-    menuButton.innerHTML = '☰';
-    
-    menuButton.addEventListener('click', () => {
-        nav.classList.toggle('mobile-menu-open');
-    });
-    
-    document.querySelector('.logo').after(menuButton);
+// 스크롤 애니메이션
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-// 페이지 로드 시 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    createMobileMenu();
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.universe-card, .gallery-item').forEach(el => {
+    observer.observe(el);
 });
 
 // FAQ 토글
