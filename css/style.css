@@ -586,4 +586,301 @@ footer {
     section h2 {
         font-size: 2.5rem;
     }
+}
+
+/* Stories Section */
+#stories {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 80px 0;
+}
+
+.story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-section {
+    margin-bottom: 60px;
+}
+
+.story-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.story-card h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.story-card p {
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.likes .story-card i {
+    color: #27ae60;
+}
+
+.dislikes .story-card i {
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .story-card {
+        padding: 20px;
+    }
+}
+
+/* Daily Philosophy Section */
+#daily-philosophy {
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+    padding: 80px 0;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3498db;
+}
+
+.timeline-item {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.time-marker {
+    position: absolute;
+    left: 42px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 20px;
+}
+
+.time-marker::before {
+    content: attr(data-time);
+    position: absolute;
+    left: -60px;
+    top: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.timeline-content {
+    margin-left: 100px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-card {
+    display: flex;
+    gap: 30px;
+}
+
+.card-image {
+    flex: 0 0 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.morning-meditation {
+    background: url('../images/morning-meditation.jpg') center/cover;
+}
+
+.lunch-sharing {
+    background: url('../images/lunch-sharing.jpg') center/cover;
+}
+
+.evening-gathering {
+    background: url('../images/evening-gathering.jpg') center/cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.philosophy-points {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.philosophy-points li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.philosophy-points i {
+    color: #3498db;
+}
+
+/* Training Stages Section */
+#training-stages {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 80px 0;
+    color: white;
+}
+
+.stages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.stage-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.stage-card:hover {
+    transform: translateY(-5px);
+}
+
+.stage-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.stage-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.stage-content h4 {
+    color: #3498db;
+    margin: 15px 0;
+}
+
+.stage-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.stage-points li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.stage-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.progress-indicator {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .philosophy-card {
+        flex-direction: column;
+    }
+
+    .card-image {
+        flex: 0 0 200px;
+    }
+
+    .timeline-container::before {
+        left: 30px;
+    }
+
+    .time-marker {
+        left: 22px;
+    }
+
+    .timeline-content {
+        margin-left: 60px;
+    }
+
+    .stages-container {
+        grid-template-columns: 1fr;
+    }
 } 
