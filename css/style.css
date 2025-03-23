@@ -883,4 +883,153 @@ footer {
     .stages-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Quest System Section */
+#quest-system {
+    background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+    padding: 80px 0;
+    color: white;
+}
+
+.quest-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.quest-stages {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.quest-category {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.quest-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.quest-header i {
+    font-size: 2rem;
+}
+
+.quest-header h3 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.level-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.quest-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.quest-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.quest-item:hover {
+    transform: translateY(-5px);
+}
+
+.quest-item h4 {
+    color: #fdbb2d;
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+}
+
+.quest-details p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.quest-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.quest-details li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.quest-reward {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.quest-reward span {
+    color: #fdbb2d;
+    font-weight: bold;
+}
+
+.quest-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.quest-note p {
+    margin: 5px 0;
+}
+
+/* Quest Category Specific Styles */
+.beginner-quests .quest-header i {
+    color: #98FB98;
+}
+
+.practitioner-quests .quest-header i {
+    color: #87CEEB;
+}
+
+.master-quests .quest-header i {
+    color: #FFD700;
+}
+
+.teacher-quests .quest-header i {
+    color: #FF69B4;
+}
+
+@media (max-width: 768px) {
+    .quest-list {
+        grid-template-columns: 1fr;
+    }
+
+    .quest-header {
+        flex-wrap: wrap;
+    }
+
+    .level-tag {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
 } 
