@@ -4,17 +4,17 @@
 
 /* Base Styles */
 :root {
-    --primary: #FF6B6B;  /* 따뜻한 레드 */
-    --secondary: #4ECDC4; /* 생동감 있는 청록색 */
-    --accent: #FFE66D;   /* 밝은 노랑 */
-    --background: #FFF3E6; /* 따뜻한 베이지 */
-    --text: #2C3E50;     /* 진한 네이비 */
+    --primary: #1E40AF;  /* 진한 파란색 */
+    --secondary: #3B82F6; /* 밝은 파란색 */
+    --accent: #F59E0B;   /* 주황색 */
+    --background: #F8FAFC; /* 매우 밝은 회색빛 하얀색 */
+    --text: #1E293B;     /* 진한 네이비 */
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, #FF6B6B, #FFE66D);
-    --bg-color: #FFF3E6;
-    --text-color: #2C3E50;
-    --border-color: rgba(44, 62, 80, 0.1);
-    --hover-color: #FFE0B5;
+    --gradient: linear-gradient(135deg, #1E40AF, #3B82F6);
+    --bg-color: #F8FAFC;
+    --text-color: #1E293B;
+    --border-color: rgba(30, 41, 59, 0.1);
+    --hover-color: #F1F5F9;
     --mystic-gradient: linear-gradient(135deg, #FF6B6B, #FFE66D);
 }
 
@@ -64,8 +64,8 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 20px rgba(255, 107, 107, 0.1);
+    background: rgba(248, 250, 252, 0.95);
+    box-shadow: 0 2px 20px rgba(30, 64, 175, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -107,7 +107,7 @@ body {
 .nav-links a {
     color: var(--text);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     position: relative;
@@ -207,11 +207,11 @@ body {
 
 .hero-text h1 {
     font-size: 4.5rem;
-    font-weight: 900;
+    font-weight: 800;
     background: linear-gradient(45deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: none;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
     margin-bottom: 1rem;
     line-height: 1.2;
     color: var(--primary);
@@ -220,7 +220,7 @@ body {
 .hero-text p {
     font-size: 1.8rem;
     color: var(--text);
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
@@ -347,11 +347,12 @@ body {
 
 .section-title {
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--primary);
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .section-title::after {
@@ -420,16 +421,27 @@ body {
 .btn-primary {
     background: var(--primary);
     color: var(--white);
-    font-weight: 700;
+    font-weight: 600;
     padding: 1rem 2rem;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(30, 64, 175, 0.1);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: #1E3A8A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.2);
+}
+
+.btn-primary i {
+    font-size: 1.2em;
 }
 
 .btn-outline {
@@ -675,7 +687,7 @@ section h2 {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: var(--gradient);
     color: var(--white);
     padding: 4rem 0;
     position: relative;
@@ -722,7 +734,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     display: block;
     margin-bottom: 0.5rem;
@@ -730,7 +742,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--accent);
+    color: var(--white);
 }
 
 .footer-social a {
