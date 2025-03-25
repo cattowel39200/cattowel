@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CatTowel Blog - 우리의 이야기</title>
+    <title>CatTowel Blog</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts - 최적화된 로딩 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog.css">
 </head>
@@ -13,77 +20,86 @@
     <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="logo">CatTowel</a>
+            <button class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#vision">Vision</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#universe">Our Vision</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="blog-main">
-        <div class="blog-header">
-            <h1>CatTowel Blog</h1>
-            <p>우리의 이야기를 공유합니다</p>
-        </div>
-
         <div class="blog-container">
-            <div class="posts-container" id="posts-container">
-                <!-- 게시물이 여기에 동적으로 로드됩니다 -->
+            <header class="blog-header">
+                <h1><i class="fas fa-book-open"></i> CatTowel Blog</h1>
+                <p>우리의 이야기를 공유합니다</p>
+            </header>
+
+            <div class="blog-content">
+                <section class="posts-section">
+                    <div id="posts-container">
+                        <!-- 게시물이 여기에 동적으로 로드됩니다 -->
+                    </div>
+                </section>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-section categories">
+                        <h3><i class="fas fa-tags"></i> 카테고리</h3>
+                        <ul>
+                            <li><a href="#" data-category="all">전체보기</a></li>
+                            <li><a href="#" data-category="story">스토리</a></li>
+                            <li><a href="#" data-category="news">소식</a></li>
+                            <li><a href="#" data-category="tips">팁과 노하우</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section recent-posts">
+                        <h3><i class="fas fa-clock"></i> 최근 게시물</h3>
+                        <ul id="recent-posts-list">
+                            <!-- 최근 게시물이 여기에 동적으로 로드됩니다 -->
+                        </ul>
+                    </div>
+                </aside>
             </div>
-            
-            <aside class="blog-sidebar">
-                <div class="sidebar-section">
-                    <h3>카테고리</h3>
-                    <ul id="categories">
-                        <li><a href="#" data-category="all">전체보기</a></li>
-                        <li><a href="#" data-category="story">스토리</a></li>
-                        <li><a href="#" data-category="news">소식</a></li>
-                        <li><a href="#" data-category="tips">팁과 노하우</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3>최근 게시물</h3>
-                    <ul id="recent-posts">
-                        <!-- 최근 게시물이 여기에 동적으로 로드됩니다 -->
-                    </ul>
-                </div>
-            </aside>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>CatTowel</h3>
-                <p>CatTowel의 눈으로 세상을 바라보며, 일상 속 지혜를 발견합니다.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#vision">Our Vision</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Social Media</h3>
-                <div class="social-links">
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CatTowel</h3>
+                    <p>CatTowel's eyes see the world, discovering wisdom in everyday life.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#universe">Our Vision</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Social Media</h3>
                     <a href="https://twitter.com/cattowel" target="_blank">
                         <i class="fab fa-x-twitter"></i>
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 CatTowel Community. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CatTowel Community. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/blog.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/blog.js" defer></script>
 </body>
 </html> 
