@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const adminPanel = document.querySelector('.admin-panel');
     const loginBox = document.querySelector('.login-box');
+    const logoutBtn = document.getElementById('logout-btn');
 
     // 로그인 폼 제출 처리
     if (loginForm) {
@@ -15,9 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 관리자 계정 확인
             if (username === 'admin' && password === 'cattowel2024!') {
                 // 로그인 성공
-                loginBox.style.display = 'none';
-                adminPanel.style.display = 'block';
-                localStorage.setItem('isAdminLoggedIn', 'true');
+                loginSuccess();
             } else {
                 // 로그인 실패
                 alert('아이디 또는 비밀번호가 올바르지 않습니다.');
@@ -25,26 +24,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 페이지 로드 시 로그인 상태 확인
-    if (localStorage.getItem('isAdminLoggedIn') === 'true') {
-        loginBox.style.display = 'none';
-        adminPanel.style.display = 'block';
+    // 로그아웃 버튼 처리
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            logout();
+        });
     }
 
-    // 로그아웃 기능 추가
-    const logoutButton = document.createElement('button');
-    logoutButton.textContent = '로그아웃';
-    logoutButton.className = 'btn-primary';
-    logoutButton.style.marginTop = '20px';
-    
-    logoutButton.addEventListener('click', function() {
+    // 페이지 로드 시 로그인 상태 확인
+    checkLoginStatus();
+
+    // 로그인 성공 시 처리
+    function loginSuccess() {
+        loginBox.style.display = 'none';
+        adminPanel.style.display = 'block';
+        localStorage.setItem('isAdminLoggedIn', 'true');
+    }
+
+    // 로그아웃 처리
+    function logout() {
         localStorage.removeItem('isAdminLoggedIn');
         loginBox.style.display = 'block';
         adminPanel.style.display = 'none';
-    });
+    }
 
-    // 관리자 패널에 로그아웃 버튼 추가
-    if (adminPanel) {
-        adminPanel.insertBefore(logoutButton, adminPanel.firstChild);
+    // 로그인 상태 확인
+    function checkLoginStatus() {
+        if (localStorage.getItem('isAdminLoggedIn') === 'true') {
+            loginSuccess();
+        }
     }
 }); 
