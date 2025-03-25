@@ -2186,4 +2186,48 @@ footer {
         transform: translateY(-100px) rotate(360deg);
         opacity: 0;
     }
+}
+
+/* Latest Post Section */
+.latest-post-section {
+    background: var(--background);
+    padding: 80px 0;
+    position: relative;
+}
+
+.latest-post-container {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.latest-post-container:hover {
+    transform: translateY(-5px);
+}
+
+.latest-post-title {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.latest-post-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.latest-post-summary {
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
 } 
