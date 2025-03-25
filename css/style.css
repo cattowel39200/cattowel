@@ -2230,4 +2230,24 @@ footer {
 
 .text-center {
     text-align: center;
+}
+
+.admin-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--background) !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.admin-link i {
+    font-size: 0.9em;
 } 
